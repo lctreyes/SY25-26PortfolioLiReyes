@@ -1,0 +1,166 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Centralized Club Application Form</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+        }
+
+        form {
+            width: 600px;
+            margin: auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+
+        fieldset {
+            border: 1px solid #999;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+
+        legend {
+            font-weight: bold;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 6px;
+            margin-top: 4px;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            border: 2px solid #0077cc;
+            background-color: #eef7ff;
+            outline: none;
+        }
+
+        .error {
+            border: 2px solid red;
+            background-color: #ffecec;
+        }
+
+        input[type="submit"], input[type="reset"] {
+            width: auto;
+            padding: 8px 16px;
+            margin-right: 10px;
+        }
+    </style>
+
+    <script>
+        function confirmSubmit() {
+            return confirm("Are you sure you want to submit this application?");
+        }
+
+        function confirmReset() {
+            return confirm("Are you sure you want to reset all the information?");
+        }
+
+        function checkEmpty(field) {
+            if (field.value.trim() === "") {
+                field.classList.add("error");
+            } else {
+                field.classList.remove("error");
+            }
+        }
+    </script>
+</head>
+<body>
+
+<h2 style="text-align:center;">Centralized Club / Organization Application Form</h2>
+
+<form method="post" action="submit" onsubmit="return confirmSubmit()" onreset="return confirmReset()">
+
+    <fieldset>
+        <legend>Student Personal Information</legend>
+
+        <label>
+            Student ID:
+            <input type="number" name="student_id" required onblur="checkEmpty(this)">
+        </label>
+
+        <label>
+            Full Name:
+            <input type="text" name="full_name" required onblur="checkEmpty(this)">
+        </label>
+
+        <label>
+            Birthday:
+            <input type="date" name="birthday" required>
+        </label>
+
+        <label>
+            Email Address:
+            <input type="email" name="email_address" required>
+        </label>
+    </fieldset>
+
+    <fieldset>
+        <legend>Application Details</legend>
+
+        <label>
+            Mobile Phone:
+            <input type="text" name="mobile_phone" required onblur="checkEmpty(this)">
+        </label>
+
+        <label>
+            Grade Level:
+            <select name="grade_level" required>
+                <option value="">-- Select Grade Level --</option>
+                <option value="g7">Grade 7</option>
+                <option value="g8">Grade 8</option>
+                <option value="g9">Grade 9</option>
+                <option value="g10">Grade 10</option>
+                <option value="g11">Grade 11</option>
+                <option value="g12">Grade 12</option>
+            </select>
+        </label>
+
+        <label>
+            Intern Email Address:
+            <input type="email" name="intern_email" required>
+        </label>
+
+        <label>
+            Intern / Extern:
+            <input type="radio" name="status" value="I" required> Intern
+            <input type="radio" name="status" value="E" required> Extern
+        </label>
+
+        <label>
+            Preferred Organization / Club:
+            <select name="preferred_club" required>
+                <option value="">-- Select Organization --</option>
+                <option value="arts">Creative Arts Club</option>
+                <option value="sports">Sports Development Club</option>
+                <option value="tech">Technology Society</option>
+                <option value="volunteer">Community Volunteer Group</option>
+                <option value="media">Media & Publications Club</option>
+            </select>
+        </label>
+
+        <label>
+            Why do you want to join?
+            <textarea name="join_reason" rows="4" required onblur="checkEmpty(this)"></textarea>
+        </label>
+    </fieldset>
+
+    <input type="submit" value="Submit Application">
+    <input type="reset" value="Reset Form">
+
+</form>
+
+</body>
+</html>
