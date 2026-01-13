@@ -5,58 +5,119 @@
     <meta charset="UTF-8">
     <title>Centralized Club Application Form</title>
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f6f8;
-        }
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
-        form {
-            width: 600px;
-            margin: auto;
-            background-color: #ffffff;
-            padding: 20px;
-            border-radius: 8px;
-            border: 1px solid #ccc;
-        }
+    <style>:root {
+    --pink: #ff2d92;
+    --soft-pink: #ffe0ec;
+    --gold: #d4af37;
+    --white: #ffffff;
+    --dark: #222;
+}
 
-        fieldset {
-            border: 1px solid #999;
-            padding: 15px;
-            margin-bottom: 20px;
-        }
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(180deg, #ffe8f2, #fff);
+    margin: 0;
+    padding: 4rem 0;
+}
 
-        legend {
-            font-weight: bold;
-        }
+h2 {
+    text-align: center;
+    font-family: 'Righteous', cursive;
+    color: var(--pink);
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
 
-        label {
-            display: block;
-            margin-bottom: 12px;
-        }
+form {
+    width: 650px;
+    margin: auto;
+    background: var(--white);
+    padding: 3rem;
+    border-radius: 30px;
+    box-shadow: 0 30px 40px rgba(255, 45, 146, 0.25);
+}
 
-        input, select, textarea {
-            width: 100%;
-            padding: 6px;
-            margin-top: 4px;
-        }
+fieldset {
+    border: 2px dashed var(--gold);
+    padding: 2rem;
+    margin-bottom: 2.5rem;
+    border-radius: 20px;
+}
 
-        input:focus, select:focus, textarea:focus {
-            border: 2px solid #0077cc;
-            background-color: #eef7ff;
-            outline: none;
-        }
+legend {
+    font-family: 'Righteous', cursive;
+    font-size: 1.6rem;
+    color: var(--pink);
+    padding: 0 1rem;
+}
 
-        .error {
-            border: 2px solid red;
-            background-color: #ffecec;
-        }
+label {
+    display: block;
+    margin-bottom: 1.4rem;
+    font-weight: 500;
+    color: var(--dark);
+}
 
-        input[type="submit"], input[type="reset"] {
-            width: auto;
-            padding: 8px 16px;
-            margin-right: 10px;
-        }
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    margin-top: 0.5rem;
+    border-radius: 12px;
+    border: 1.8px solid #ccc;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--gold);
+    background-color: var(--soft-pink);
+    outline: none;
+}
+
+input[type="radio"] {
+    width: auto;
+    margin-right: 0.4rem;
+}
+
+.error {
+    border: 2px solid red;
+    background-color: #ffecec;
+}
+
+/* BUTTONS */
+input[type="submit"],
+input[type="reset"] {
+    font-family: 'Righteous', cursive;
+    border: none;
+    border-radius: 30px;
+    padding: 0.8rem 2.2rem;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="submit"] {
+    background: var(--pink);
+    color: white;
+    box-shadow: 0 10px 20px rgba(255, 45, 146, 0.4);
+}
+
+input[type="reset"] {
+    background: var(--gold);
+    color: white;
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+}
     </style>
 
     <script>
