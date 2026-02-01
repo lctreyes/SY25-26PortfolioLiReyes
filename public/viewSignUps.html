@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Sign-Ups</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Agbalumo&family=Londrina+Solid:wght@300;400;900&family=Righteous&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="view.js" defer></script>
+</head>
+<body>
+
+<h2>📋 Students Who Signed-Up</h2>
+
+<a href="index.html" class="back-link">← Back to Sign-Up</a>
+
+<div class="card">
+
+    <label>Select Your Club
+        <select id="filterClub">
+            <option value="ALL">ALL</option>
+            <option>Bake Club</option>
+            <option>Himig Agham</option>
+            <option>Computron</option>
+        </select>
+    </label>
+
+    <p id="total">Total Signup: 0</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Club</th>
+                <th>ID</th>
+                <th>Full Name</th>
+                <th>Grade</th>
+                <th>Email</th>
+                <th>Mobile</th>
+                <th>Intern/Extern</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+    </table>
+
+    <p id="message" class="message"></p>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,100 @@
+body {
+    font-family: 'Londrina Solid', cursive;
+    background: linear-gradient(180deg, #ffd6e8, #fff);
+    padding: 30px;
+    color: black;
+}
+
+h2 {
+    text-align: center;
+    font-family: 'Agbalumo', cursive;
+    color: #ff2d92;
+    font-size: 2.8rem;
+}
+
+.card {
+    max-width: 900px;
+    margin: auto;
+    background: white;
+    padding: 25px;
+    border-radius: 25px;
+    box-shadow: 0 15px 30px rgba(255,45,146,0.25);
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    font-size: 1.1rem;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 15px;
+    border: 2px solid #ff2d92;
+    margin-top: 5px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.radio-group label {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.buttons {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+}
+
+.pink-btn {
+    background: #ff2d92;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-family: 'Righteous', cursive;
+}
+
+.outline-btn {
+    background: white;
+    color: #ff2d92;
+    border: 2px solid #ff2d92;
+    padding: 10px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-family: 'Righteous', cursive;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #ff2d92;
+    color: white;
+}
+
+th, td {
+    border: 1px solid #ff2d92;
+    padding: 8px;
+    text-align: center;
+}
+
+.back-link {
+    display: block;
+    text-align: center;
+    margin-bottom: 15px;
+    color: #ff2d92;
+    font-family: 'Righteous', cursive;
+    text-decoration: none;
+}
+
+.message {
+    text-align: center;
+    margin-top: 15px;
+    font-weight: bold;
+}

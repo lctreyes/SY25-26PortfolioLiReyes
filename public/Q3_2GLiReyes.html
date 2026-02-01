@@ -1,225 +1,66 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Centralized Club Application Form</title>
+    <title>BarbieLAT Club Sign-Up</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Agbalumo&family=Londrina+Solid:wght@300;400;900&family=Righteous&display=swap" rel="stylesheet">
 
-    <style>:root {
-    --pink: #ff2d92;
-    --soft-pink: #ffe0ec;
-    --gold: #d4af37;
-    --white: #ffffff;
-    --dark: #222;
-}
-
-body {
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(180deg, #ffe8f2, #fff);
-    margin: 0;
-    padding: 4rem 0;
-}
-
-h2 {
-    text-align: center;
-    font-family: 'Righteous', cursive;
-    color: var(--pink);
-    font-size: 3rem;
-    margin-bottom: 2rem;
-}
-
-form {
-    width: 650px;
-    margin: auto;
-    background: var(--white);
-    padding: 3rem;
-    border-radius: 30px;
-    box-shadow: 0 30px 40px rgba(255, 45, 146, 0.25);
-}
-
-fieldset {
-    border: 2px dashed var(--gold);
-    padding: 2rem;
-    margin-bottom: 2.5rem;
-    border-radius: 20px;
-}
-
-legend {
-    font-family: 'Righteous', cursive;
-    font-size: 1.6rem;
-    color: var(--pink);
-    padding: 0 1rem;
-}
-
-label {
-    display: block;
-    margin-bottom: 1.4rem;
-    font-weight: 500;
-    color: var(--dark);
-}
-
-input,
-select,
-textarea {
-    width: 100%;
-    padding: 0.8rem 1rem;
-    margin-top: 0.5rem;
-    border-radius: 12px;
-    border: 1.8px solid #ccc;
-    font-size: 1rem;
-    font-family: 'Poppins', sans-serif;
-}
-
-input:focus,
-select:focus,
-textarea:focus {
-    border-color: var(--gold);
-    background-color: var(--soft-pink);
-    outline: none;
-}
-
-input[type="radio"] {
-    width: auto;
-    margin-right: 0.4rem;
-}
-
-.error {
-    border: 2px solid red;
-    background-color: #ffecec;
-}
-
-/* BUTTONS */
-input[type="submit"],
-input[type="reset"] {
-    font-family: 'Righteous', cursive;
-    border: none;
-    border-radius: 30px;
-    padding: 0.8rem 2.2rem;
-    font-size: 1.1rem;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-input[type="submit"] {
-    background: var(--pink);
-    color: white;
-    box-shadow: 0 10px 20px rgba(255, 45, 146, 0.4);
-}
-
-input[type="reset"] {
-    background: var(--gold);
-    color: white;
-}
-
-input[type="submit"]:hover,
-input[type="reset"]:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 15px 25px rgba(0,0,0,0.2);
-}
-    </style>
-
-    <script>
-        function confirmSubmit() {
-            return confirm("Are you sure you want to submit this application?");
-        }
-
-        function confirmReset() {
-            return confirm("Are you sure you want to reset all the information?");
-        }
-
-        function checkEmpty(field) {
-            if (field.value.trim() === "") {
-                field.classList.add("error");
-            } else {
-                field.classList.remove("error");
-            }
-        }
-    </script>
+    <link rel="stylesheet" href="styles.css">
+    <script src="signup.js" defer></script>
 </head>
 <body>
 
-<h2 style="text-align:center;">Centralized Club / Organization Application Form</h2>
+<h2>🎀 Club Sign-Up Form 🎀</h2>
 
-<form method="post" action="submit" onsubmit="return confirmSubmit()" onreset="return confirmReset()">
+<form id="signupForm" class="card">
 
-    <fieldset>
-        <legend>Student Personal Information</legend>
+    <label>Student ID
+        <input type="number" id="studentId" required>
+    </label>
 
-        <label>
-            Student ID:
-            <input type="number" name="student_id" required onblur="checkEmpty(this)">
-        </label>
+    <label>Full Name
+        <input type="text" id="fullName" required>
+    </label>
 
-        <label>
-            Full Name:
-            <input type="text" name="full_name" required onblur="checkEmpty(this)">
-        </label>
+    <label>Grade Level
+        <select id="grade" required>
+            <option value="">-- Select Grade --</option>
+            <option>Grade 7</option>
+            <option>Grade 8</option>
+            <option>Grade 9</option>
+            <option>Grade 10</option>
+        </select>
+    </label>
 
-        <label>
-            Birthday:
-            <input type="date" name="birthday" required>
-        </label>
+    <label>Email
+        <input type="email" id="email" required>
+    </label>
 
-        <label>
-            Email Address:
-            <input type="email" name="email_address" required>
-        </label>
-    </fieldset>
+    <label>Mobile Number
+        <input type="text" id="mobile" required>
+    </label>
 
-    <fieldset>
-        <legend>Application Details</legend>
+    <label>Club
+        <select id="club" required>
+            <option value="">-- Select Club --</option>
+            <option>Bake Club</option>
+            <option>Himig Agham</option>
+            <option>Computron</option>
+        </select>
+    </label>
 
-        <label>
-            Mobile Phone:
-            <input type="text" name="mobile_phone" required onblur="checkEmpty(this)">
-        </label>
+    <label>Status</label>
+    <div class="radio-group">
+        <label><input type="radio" name="status" value="Intern" required> Intern</label>
+        <label><input type="radio" name="status" value="Extern"> Extern</label>
+    </div>
 
-        <label>
-            Grade Level:
-            <select name="grade_level" required>
-                <option value="">-- Select Grade Level --</option>
-                <option value="g7">Grade 7</option>
-                <option value="g8">Grade 8</option>
-                <option value="g9">Grade 9</option>
-                <option value="g10">Grade 10</option>
-                <option value="g11">Grade 11</option>
-                <option value="g12">Grade 12</option>
-            </select>
-        </label>
-
-        <label>
-            Intern Email Address:
-            <input type="email" name="intern_email" required>
-        </label>
-
-        <label>
-            Intern / Extern:
-            <input type="radio" name="status" value="I" required> Intern
-            <input type="radio" name="status" value="E" required> Extern
-        </label>
-
-        <label>
-            Preferred Organization / Club:
-            <select name="preferred_club" required>
-                <option value="">-- Select Organization --</option>
-                <option value="arts">Creative Arts Club</option>
-                <option value="sports">Sports Development Club</option>
-                <option value="tech">Technology Society</option>
-                <option value="volunteer">Community Volunteer Group</option>
-                <option value="media">Media & Publications Club</option>
-            </select>
-        </label>
-
-        <label>
-            Why do you want to join?
-            <textarea name="join_reason" rows="4" required onblur="checkEmpty(this)"></textarea>
-        </label>
-    </fieldset>
-
-    <input type="submit" value="Submit Application">
-    <input type="reset" value="Reset Form">
+    <div class="buttons">
+        <button type="submit" class="pink-btn">Submit</button>
+        <button type="button" class="outline-btn" onclick="goToView()">View Signups</button>
+    </div>
 
 </form>
 
