@@ -1,0 +1,15 @@
+.star {
+    font-size: 2rem;
+    cursor: pointer;
+    color: gray;
+}
+
+.star.selected {
+    color: yellow;
+}
+
+#listContainer li {
+    list-style: none;
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+}
