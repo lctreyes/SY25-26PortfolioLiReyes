@@ -1,15 +1,144 @@
-.star {
-    font-size: 2rem;
-    cursor: pointer;
-    color: gray;
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f0f2f5;
+  display: flex;
+  justify-content: center;
+  padding: 40px 16px;
+  min-height: 100vh;
+} /* FIX: closing brace was missing — broke all styles below */
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+  padding: 32px 28px;
+  width: 100%;
+  max-width: 480px;
+  height: fit-content;
 }
 
-.star.selected {
-    color: yellow;
+h1 {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 24px;
+  color: #111;
 }
 
-#listContainer li {
-    list-style: none;
-    border-bottom: 1px solid #ccc;
-    padding: 10px;
+.form-group {
+  margin-bottom: 18px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 6px;
+  font-size: 0.95rem;
+  color: #222;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 9px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+input[type="text"]:focus {
+  border-color: #2979ff;
+}
+
+select {
+  width: 100%;
+  padding: 9px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  background: #fff;
+  outline: none;
+  cursor: pointer;
+}
+
+/* Star Rating */
+.stars {
+  display: flex;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.stars span {
+  font-size: 1.8rem;
+  color: #ccc;
+  transition: color 0.15s;
+  user-select: none;
+}
+
+.stars span.active {
+  color: #f5c518;
+}
+
+/* Add Movie Button */
+.btn-add {
+  width: 100%;
+  padding: 12px;
+  background: #2979ff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: background 0.2s;
+}
+
+.btn-add:hover  { background: #1a5fd6; }
+.btn-add:active { background: #1249b0; }
+
+/* Movie List */
+h2 {
+  text-align: center;
+  font-size: 1.2rem;
+  margin: 28px 0 14px;
+  color: #111;
+}
+
+#movie-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.movie-item {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px 14px;
+  font-size: 0.92rem;
+  color: #333;
+  background: #fafafa;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.movie-item .movie-stars {
+  color: #f5c518;
+  font-size: 1rem;
+  letter-spacing: 1px;
+}
+
+.movie-item .movie-stars .empty-star {
+  color: #ccc;
+}
+
+.empty-msg {
+  text-align: center;
+  color: #aaa;
+  font-size: 0.9rem;
+  padding: 12px 0;
 }
