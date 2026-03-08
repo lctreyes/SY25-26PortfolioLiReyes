@@ -7,8 +7,7 @@ body {
   justify-content: center;
   padding: 40px 16px;
   min-height: 100vh;
-} /* FIX: closing brace was missing — broke all styles below */
-
+} 
 .card {
   background: #fff;
   border-radius: 12px;
@@ -98,8 +97,6 @@ select {
 
 .btn-add:hover  { background: #1a5fd6; }
 .btn-add:active { background: #1249b0; }
-
-/* Movie List */
 h2 {
   text-align: center;
   font-size: 1.2rem;
@@ -142,3 +139,35 @@ h2 {
   font-size: 0.9rem;
   padding: 12px 0;
 }
+
+.movie-item {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.movie-info {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.rating-value {
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.btn-delete {
+  margin-top: 6px;
+  padding: 4px 10px;
+  background: #fff;
+  color: #333;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.btn-delete:hover  { background: #ffe0e0; border-color: #e53935; color: #e53935; }
+.btn-delete:active { background: #ffcdd2; }
